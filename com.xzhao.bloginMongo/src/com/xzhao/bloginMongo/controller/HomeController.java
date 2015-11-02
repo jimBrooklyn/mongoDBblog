@@ -5,11 +5,12 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.xzhao.bloginMongo.dao.UserDao;
+
 @Controller
 public class HomeController {
 	@Autowired 
-	private MongoTemplate mongotemplate;
-	
+	private UserDao userDao;
 	
 	@RequestMapping("/")
 	public String showHome()	{				
