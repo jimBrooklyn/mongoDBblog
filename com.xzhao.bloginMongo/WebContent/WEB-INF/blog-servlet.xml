@@ -14,8 +14,8 @@
 	</bean>
 
 	<context:component-scan base-package="com.xzhao.bloginMongo.controller" />
-	<context:component-scan base-package="com.xzhao.bloginMongo.dao" />
 	<context:component-scan base-package="com.xzhao.bloginMongo.service" />
+		<context:component-scan base-package="com.xzhao.bloginMongo.dao" />
 	<context:component-scan base-package="com.xzhao.bloginMongo.config" />
 
 	<mvc:annotation-driven></mvc:annotation-driven>

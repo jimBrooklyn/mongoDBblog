@@ -18,14 +18,9 @@ public class HomeController {
 	private UserService userService;
 	
 	@RequestMapping("/")
-	public String showHome(Model model)	{	
-		
-		List<User> users= userService.allUsers();
-		
+	public String showHome(Model model)	{		
+		List<User> users= userService.allUsers();	
 		model.addAttribute("users", users);
-		
-		System.out.println(users.size());
-		System.out.println(users.get(0).getEmail());
 		return "home";
 	}
 
