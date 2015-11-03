@@ -10,6 +10,7 @@
 		<config>WebContent/WEB-INF/blog-servlet.xml</config>
 		<config>src/com/xzhao/bloginMongo/config/service-context.xml</config>
 		<config>src/com/xzhao/bloginMongo/config/dao-context.xml</config>
+		<config>src/com/xzhao/bloginMongo/config/security-context.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
