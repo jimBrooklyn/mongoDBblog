@@ -14,10 +14,8 @@ public class Post {
 	private String subject;
 	private String content;
 	private Date date;
-
 	public Post() {
 	}
-
 
 	public Post(ObjectId id, String username, String subject, String content, Date date) {
 
@@ -28,11 +26,9 @@ public class Post {
 		this.setDate(date);
 	}
 
-
 	public ObjectId getId() {
 		return id;
 	}
-
 
 	public void setId(ObjectId id) {
 		this.id = id;
@@ -58,11 +54,9 @@ public class Post {
 		this.subject = subject;
 	}
 
-
 	public String getContent() {
 		return content;
 	}
-
 
 	public void setContent(String content) {
 		this.content = content;
@@ -75,7 +69,6 @@ public class Post {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-
 
 	@Override
 	public String toString() {

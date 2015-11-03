@@ -60,7 +60,6 @@ $(document).ready(onload);
 	<sf:form id="details" method="post" 
 		action="${pageContext.request.contextPath}/createuser" commandName="user">
 
-		<sf:input type="hidden" path="id" name="id" />
 		<table class="formtable">
 			<tr>
 				<td>Username:</td>

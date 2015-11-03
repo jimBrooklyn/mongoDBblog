@@ -26,12 +26,16 @@
 			<input type="submit" value="Log out" /> <input type="hidden"
 				name="${_csrf.parameterName}" value="${_csrf.token}" />
 		</form>
-		
 		<p>
 			<a href="<c:url value="/createpost"/>"> Create a new post</a>
 		</p>
 	</sec:authorize>
-
+	
+	<sec:authorize access="!isAuthenticated()">
+		<p>
+			<a href="<c:url value="/newuser"/>">Create a new Blog user </a>
+		</p>
+	</sec:authorize>
 
 
 	<table id="formtable">

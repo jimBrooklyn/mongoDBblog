@@ -20,20 +20,22 @@
 			access="isAuthenticated()" />
 		<security:intercept-url pattern="/docreate"
 			access="isAuthenticated()" />
+			<security:intercept-url pattern="/logout"
+			access="permitAll" />
 		<security:intercept-url pattern="/loggedout"
 			access="permitAll" />
 					<security:intercept-url pattern="/newuser"
 			access="permitAll" />
 		<security:intercept-url pattern="/createuser"
-			access="permitAll" />
+			access="permitAll" />			
 		<security:intercept-url pattern="/usercreated"
 			access="permitAll" />
 
 		<security:intercept-url pattern="/static/**"
 			access="permitAll" />
 
+		<security:logout logout-success-url="/loggedout" />
 		<security:intercept-url pattern="/**" access="denyAll" />
-
 		<security:form-login />
 	</security:http>
 </beans>
