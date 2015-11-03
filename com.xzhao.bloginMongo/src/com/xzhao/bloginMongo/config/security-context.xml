@@ -33,6 +33,8 @@
 
 		<security:intercept-url pattern="/static/**"
 			access="permitAll" />
+		<security:intercept-url pattern="/posts"
+			access="permitAll" />
 
 		<security:logout logout-success-url="/loggedout" />
 		<security:intercept-url pattern="/**" access="denyAll" />

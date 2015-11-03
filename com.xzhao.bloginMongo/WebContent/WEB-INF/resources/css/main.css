@@ -23,8 +23,30 @@ p.error {
 	font-size: 28px;
 }
 
-#subject{
-	width:60;
+p.subject{
+	color:blue;
+	font-size:28px;
+}
+p.comments{
+		position:relative;
+    left: 60px;
+	color:red;
+	width:900px;
+	font-size:16px;
+}
+p.newcomments{
+	position:relative;
+    left: 60px;
+	font-size:18px;
+}
+
+div.content{
+	position: relative;
+    left: 30px;
+	background-color:lightgrey;
+	color: green;
+	font-style: italic;
+	width:1000px;
 }
 
 .good {
@@ -40,8 +62,6 @@ th {
 	text-align: left;
 }
 td {
-
-
 	font-size: 18px;
 }
 
