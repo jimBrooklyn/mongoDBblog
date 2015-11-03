@@ -23,6 +23,10 @@ p.error {
 	font-size: 28px;
 }
 
+#subject{
+	width:60;
+}
+
 .good {
 	color: green;
 	font-style: italic;

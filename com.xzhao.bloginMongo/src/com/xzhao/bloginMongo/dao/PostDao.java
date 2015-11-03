@@ -8,23 +8,19 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Component;
 
-@Component("userDao")
-public class UserDao {
+@Component("postDao")
+public class PostDao {
 	@Autowired 
 	private MongoTemplate mongoTemplate;
 	
-	private String USERS="users";
+	private String POSTS="posts";
 	
-	public void createUser(User user) {
+	public void createPost(Post post) {
 		// TODO Auto-generated method stub
-		mongoTemplate.save(user);
+		mongoTemplate.save(post);
 	}
-	public List<User> allUsers() {
-		return mongoTemplate.findAll(User.class, USERS);
-	}
-	public boolean exists(String username) {
-		// TODO Auto-generated method stub
+	public List<Post> allPosts(String username) {
 		Query query = new Query(Criteria.where("username").is(username));
-		return mongoTemplate.exists(query, USERS);
+		return mongoTemplate.find(query, Post.class, POSTS);
 	}	
 }

@@ -22,6 +22,11 @@ public class UserService {
 		// TODO Auto-generated method stub
 		return userDao.allUsers();
 	}
+
+	public boolean exists(String username) {
+		// TODO Auto-generated method stub
+		return userDao.exists(username);
+	}
 		
 	
 }

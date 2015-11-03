@@ -1,12 +1,13 @@
 package com.xzhao.bloginMongo.dao;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "users")
 public class User {
 	@Id
-	private String id;
+	private ObjectId id;
 	private String username;
 	private String firstname;
 	private String lastname;
@@ -18,7 +19,7 @@ public class User {
 
 
 
-	public User(String id, String username, String firstname, String lastname, String email, String password) {
+	public User(ObjectId id, String username, String firstname, String lastname, String email, String password) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -31,10 +32,10 @@ public class User {
 
 
 	public String getId() {
-		return id;
+		return id.toHexString();
 	}
 
-	public void setId(String id) {
+	public void setId(ObjectId id) {
 		this.id = id;
 	}
 
