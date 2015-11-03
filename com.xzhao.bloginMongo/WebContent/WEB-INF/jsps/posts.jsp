@@ -14,11 +14,12 @@
 	<h2>All of Your Posts </h2>
 
 		<c:forEach var="post" items="${posts}">
-
-				Subject: <c:out value="${post.subject}"></c:out><br>				
-				Posted On: <c:out value="${post.time}"></c:out><br>
-				Content: <td><c:out value="${post.content}"></c:out>
-				<p></p>
+		<p class="subject">		Subject: <c:out value="${post.subject}"></c:out>	</p>		
+		<p class="date">		Posted On: <c:out value="${post.date}"></c:out> </p>
+		<div class="content">    <c:out value="${post.content}"></c:out>
+	    </div>
+	    	 <p class= "comments"> Comments: (number placeholder)</p>
+	    	 <p class="newcomments"> <a href="#">Add your comments</a></p>
 		</c:forEach>
 
 </body>
