@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.xzhao.bloginMongo.dao.Comment;
 import com.xzhao.bloginMongo.dao.Post;
 import com.xzhao.bloginMongo.service.PostService;
 
@@ -29,6 +31,7 @@ public class PostsController {
 		String username = principal.getName();
 		List<Post> posts = postService.allPosts(username);
 		model.addAttribute("posts", posts);
+		model.addAttribute("comment",new Comment()); // if I want to send multi comments in a page shloud be array
 		return "posts";
 	}
 

@@ -2,9 +2,11 @@ package com.xzhao.bloginMongo.service;
 
 import java.util.List;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.xzhao.bloginMongo.dao.Comment;
 import com.xzhao.bloginMongo.dao.Post;
 import com.xzhao.bloginMongo.dao.PostDao;
 
@@ -28,6 +30,11 @@ public class PostService {
 		List<Post> accounts = postDao.allPosts(username);
 		if(accounts.size()>0) return true;
 		return false;
+	}
+
+	public void addComment(ObjectId id, Comment comment) {
+		// TODO Auto-generated method stub
+		postDao.addComment(id, comment);
 	}
 
 }

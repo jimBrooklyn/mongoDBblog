@@ -2,6 +2,7 @@ package com.xzhao.bloginMongo.dao;
 
 import java.util.List;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -22,5 +23,9 @@ public class PostDao {
 	public List<Post> allPosts(String username) {
 		Query query = new Query(Criteria.where("username").is(username));
 		return mongoTemplate.find(query, Post.class, POSTS);
+	}
+	public void addComment(ObjectId id, Comment comment) {
+		// TODO Auto-generated method stub
+		
 	}	
 }

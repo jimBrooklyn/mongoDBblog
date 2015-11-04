@@ -1,5 +1,6 @@
 package com.xzhao.bloginMongo.dao;
 
+import java.util.Arrays;
 import java.util.Date;
 
 import org.bson.types.ObjectId;
@@ -14,58 +15,47 @@ public class Post {
 	private String subject;
 	private String content;
 	private Date date;
+	private Comment[] comments;	
+	
 	public Post() {
+
 	}
-
-	public Post(ObjectId id, String username, String subject, String content, Date date) {
-
+	public Post(ObjectId id, String username, String subject, String content, Date date, Comment[] comments) {
+		super();
 		this.id = id;
 		this.username = username;
 		this.subject = subject;
 		this.content = content;
-		this.setDate(date);
+		this.date = date;
+		this.comments = comments;
 	}
-
 	public ObjectId getId() {
 		return id;
 	}
-
 	public void setId(ObjectId id) {
 		this.id = id;
 	}
-
-
 	public String getUsername() {
 		return username;
 	}
-
-
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
-
 	public String getSubject() {
 		return subject;
 	}
-
-
 	public void setSubject(String subject) {
 		this.subject = subject;
 	}
-
 	public String getContent() {
 		return content;
 	}
-
 	public void setContent(String content) {
 		this.content = content;
 	}
-
 	public Date getDate() {
 		return date;
 	}
-
 	public void setDate(Date date) {
 		this.date = date;
 	}
@@ -73,6 +63,8 @@ public class Post {
 	@Override
 	public String toString() {
 		return "Post [id=" + id + ", username=" + username + ", subject=" + subject + ", content=" + content + ", date="
-				+ date + "]";
-	}	
+				+ date + ", comments=" + Arrays.toString(comments) + "]";
+	}
+
+
 }

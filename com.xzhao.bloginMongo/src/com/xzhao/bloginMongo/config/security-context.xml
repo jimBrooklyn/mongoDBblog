@@ -30,12 +30,14 @@
 			access="permitAll" />			
 		<security:intercept-url pattern="/usercreated"
 			access="permitAll" />
-
+		<security:intercept-url pattern="/newcomment"
+			access="permitAll" />
+	<security:intercept-url pattern="/sendcomment"
+			access="permitAll" />
 		<security:intercept-url pattern="/static/**"
 			access="permitAll" />
 		<security:intercept-url pattern="/posts"
 			access="permitAll" />
-
 		<security:logout logout-success-url="/loggedout" />
 		<security:intercept-url pattern="/**" access="denyAll" />
 		<security:form-login />
