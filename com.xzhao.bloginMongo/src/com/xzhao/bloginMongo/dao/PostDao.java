@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Component;
 
 @Component("postDao")
@@ -26,6 +27,8 @@ public class PostDao {
 	}
 	public void addComment(ObjectId id, Comment comment) {
 		// TODO Auto-generated method stub
+		mongoTemplate.updateFirst(Query.query(Criteria.where("id").is(id)),
+                new Update().push("comments",comment), Post.class);
 		
 	}	
 }
