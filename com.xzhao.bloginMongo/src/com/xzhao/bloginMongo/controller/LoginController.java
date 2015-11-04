@@ -12,7 +12,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.xzhao.bloginMongo.dao.Comment;
 import com.xzhao.bloginMongo.dao.Post;
 import com.xzhao.bloginMongo.dao.User;
 import com.xzhao.bloginMongo.service.PostService;
@@ -50,12 +49,6 @@ public class LoginController {
 		return "withdrawn";
 	}	
 	
-	@RequestMapping("/newcomment")
-	public String createComment(Model model) {
-		model.addAttribute("comment",new Comment());
-		return "newcomment";
-	}
-	
 	@RequestMapping("/allposts")
 
 		public String showAllposts(Model model, Principal principal)	{				
@@ -91,18 +84,4 @@ public class LoginController {
 		return "usercreated";
 	}
 
-
-@RequestMapping(method = RequestMethod.POST, value = "/sendcomment")
-public String dosend(Model model, @Validated Comment comment, BindingResult rs) {
-
-	if (rs.hasErrors()) {
-		return "newcomment";
-	}
-	if (true) {
-	}
-	
-	ObjectId id = null;
-	postService.addComment(id,comment);
-	return "commentsend";
-}
 }

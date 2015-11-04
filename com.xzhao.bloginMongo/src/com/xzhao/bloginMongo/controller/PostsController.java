@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -61,6 +62,21 @@ public class PostsController {
 			
 			return "postcreated";
 		}
+	}
+	
+	@RequestMapping(method = RequestMethod.POST, value = "/sendcomment")
+	public String dosend(Model model, @Validated Comment comment, BindingResult rs) {
+
+		if (rs.hasErrors()) {
+			return "posts";
+		}
+		if (true) {
+		}
+		
+		System.out.println(comment.getPostId());
+		ObjectId id = new ObjectId(comment.getPostId());
+		postService.addComment(id,comment);
+		return "commentsent";
 	}
 
 }

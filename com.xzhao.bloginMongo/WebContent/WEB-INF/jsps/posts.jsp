@@ -27,14 +27,13 @@
 			<c:out value="${post.content}"></c:out>
 		</div>
 		<p class="comments">Comments: number of comments</p>
-		<p class="newcomments">
-			<a href="<c:url value='/newcomment'/>">add a comment</a>
-		</p>
-		
-		<h4>write your comment here.</h4>
+
+		<p class="newcomments">write your comment </p>
 		<sf:form method="post"
-			action="${pageContext.request.contextPath}/sendcomment"
-			commandName="comment">
+			action="${pageContext.request.contextPath}/sendcomment"	commandName="comment">
+			
+			<input type="hidden" name="postId" value="${post.id}">
+			
 			<table>
 				<tr>
 					<td>Your name:</td>

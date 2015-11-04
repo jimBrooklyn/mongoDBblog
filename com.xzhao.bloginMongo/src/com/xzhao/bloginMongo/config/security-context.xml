@@ -30,7 +30,7 @@
 			access="permitAll" />			
 		<security:intercept-url pattern="/usercreated"
 			access="permitAll" />
-		<security:intercept-url pattern="/newcomment"
+		<security:intercept-url pattern="/commentsent"
 			access="permitAll" />
 	<security:intercept-url pattern="/sendcomment"
 			access="permitAll" />

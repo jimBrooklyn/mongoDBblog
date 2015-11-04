@@ -11,21 +11,19 @@ public class Comment {
 	private String name;
 
 	//send message to this Post
-	private Post origPost;	
+	private String postId;	
 	private Date date;	
 		
 	public Comment(){			
 	}
-	
 
-	public Comment(String message, String name, Post origPost, Date date) {
-
+	public Comment(String message, String name, String postId, Date date) {
+		super();
 		this.message = message;
 		this.name = name;
-		this.origPost = origPost;
+		this.postId = postId;
 		this.date = date;
 	}
-
 
 	public String getMessage() {
 		return message;
@@ -43,12 +41,12 @@ public class Comment {
 		this.name = name;
 	}
 
-	public Post getOrigPost() {
-		return origPost;
+	public String getPostId() {
+		return postId;
 	}
 
-	public void setOrigPost(Post origPost) {
-		this.origPost = origPost;
+	public void setPostId(String postId) {
+		this.postId = postId;
 	}
 
 	public Date getDate() {
@@ -61,6 +59,6 @@ public class Comment {
 
 	@Override
 	public String toString() {
-		return "Comment [message=" + message + ", name=" + name + ",  date=" + date + "]";
-	}		
+		return "Comment [message=" + message + ", name=" + name + ", postId=" + postId + ", date=" + date + "]";
+	}
 }
