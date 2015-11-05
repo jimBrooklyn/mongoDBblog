@@ -12,12 +12,12 @@
 </head>
 
 <body>
-	<h2>All of Your Posts</h2>
+	<h2 style="text-align:center">Welcome to my Blog space</h2>
 
 	<c:forEach var="post" items="${posts}">
-		<p class="subject">
-			Subject:
-			<c:out value="${post.subject}"></c:out>
+		<p class="title">
+			Title:
+			<c:out value="${post.title}"></c:out>
 		</p>
 		<p class="date">
 			Posted On:
@@ -26,15 +26,33 @@
 		<div class="content">
 			<c:out value="${post.content}"></c:out>
 		</div>
-		<p class="comments">Comments: number of comments</p>
+		<p class="commentscount">
+			comments (<span class="commentsnumber"><c:out value="${post.comments.size()}"/></span>)
+		</p>
+		<div class="comments">
+			<c:forEach var="comment" items="${post.comments}">
+				<p class="comment">
+				<span style ="font-style:normal"> 	commented by:</span>	
+				<c:out value="${comment.name}"></c:out> 
+					&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
+					<span style ="font-style:normal"> On:</span>	
+					<c:out value="${comment.date}"></c:out>
+				</p>
+				<div class="messgae">
+					&nbsp; &nbsp;&nbsp;<c:out value="${comment.message}"></c:out>
+				</div>
+			</c:forEach>
+		</div>
 
-		<p class="newcomments">write your comment </p>
+
+		<p class="newcomments">add your comment</p>
 		<sf:form method="post"
-			action="${pageContext.request.contextPath}/sendcomment"	commandName="comment">
-			
+			action="${pageContext.request.contextPath}/sendcomment"
+			commandName="comment">
+
 			<input type="hidden" name="postId" value="${post.id}">
-			
-			<table>
+
+			<table id="comments">
 				<tr>
 					<td>Your name:</td>
 					<td><sf:input path="name" name="name" type="text" /> <br />
@@ -50,8 +68,8 @@
 				</tr>
 			</table>
 		</sf:form>
-
 		<hr>
+
 	</c:forEach>
 
 </body>

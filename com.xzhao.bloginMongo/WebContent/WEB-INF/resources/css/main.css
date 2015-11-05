@@ -23,21 +23,38 @@ p.error {
 	font-size: 28px;
 }
 
-p.subject{
+p.date {
+	font-size: 20px;
+}
+
+
+p.title{
 	color:blue;
 	font-size:28px;
 }
 p.comments{
-		position:relative;
-    left: 60px;
-	color:red;
+	position:relative;
+    left: 80px;
 	width:900px;
-	font-size:16px;
+	font-size:20px;
 }
+p.commentscount{
+	position:relative;
+    left: 30px;
+	font-size:20px;
+	font-weight: bold;
+}
+
+span.commentsnumber{
+	color:red;
+	font-weight: normal;
+}
+
 p.newcomments{
 	position:relative;
-    left: 60px;
-	font-size:18px;
+    left: 30px;
+		font-size:20px;
+	font-weight: bold;
 }
 
 div.content{
@@ -45,7 +62,20 @@ div.content{
     left: 30px;
 	background-color:lightgrey;
 	color: green;
+	width:1000px;
+}
+
+div.comments{
+	position: relative;
+    left: 70px;
 	font-style: italic;
+	width:1000px;
+}
+div.message{
+	position: relative;
+    left: 120px;
+	font-size:16px;
+	font-style: normal;
 	width:1000px;
 }
 

@@ -1,5 +1,6 @@
 package com.xzhao.bloginMongo.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.bson.types.ObjectId;
@@ -27,6 +28,7 @@ public class PostDao {
 	}
 	public void addComment(ObjectId id, Comment comment) {
 		// TODO Auto-generated method stub
+		comment.setDate(new Date());
 		mongoTemplate.updateFirst(Query.query(Criteria.where("id").is(id)),
                 new Update().push("comments",comment), Post.class);
 		
