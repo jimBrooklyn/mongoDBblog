@@ -26,8 +26,8 @@
 		<table>
 
 			<tr>
-				<td >Subject:</td>
-				<td ><input name="subject" type="text" size="60" value="subject"></td>
+				<td >Title:</td>
+				<td ><input name="title" type="text" size="60" value="title"></td>
 			</tr>
 
 			<tr>

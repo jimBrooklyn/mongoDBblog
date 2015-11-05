@@ -26,5 +26,12 @@ public class UserDao {
 		// TODO Auto-generated method stub
 		Query query = new Query(Criteria.where("username").is(username));
 		return mongoTemplate.exists(query, USERS);
+	}
+	public User findUser(String username) {
+		if(exists(username)){
+			Query query = new Query(Criteria.where("username").is(username));
+			return mongoTemplate.findOne(query, User.class, USERS);
+		}		
+		return null;
 	}	
 }

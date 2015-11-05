@@ -3,6 +3,8 @@ package com.xzhao.bloginMongo.dao;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.constraints.Size;
+
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -12,8 +14,13 @@ public class Post {
 	@Id
 	private ObjectId id;
 	private String username;
+	
+	@Size(min=4, max=100)
 	private String title;
+	
+	@Size(min=20)
 	private String content;
+	
 	private Date date;
 	private List<Comment> comments;
 	

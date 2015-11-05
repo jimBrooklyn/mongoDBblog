@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -39,22 +40,40 @@ public class LoginController {
 	public String showDenied() {
 		return "denied";
 	}
+
+	@RequestMapping("/myblog")
+	public String showBlog(Model model, Principal principal) {
+		String username =principal.getName();
+		  User user = userService.findUser(username);  
+		  if(user == null){
+			  return "error"; 
+		  }
+		  model.addAttribute("user", user);  
+		  return "displaypost"; 
+		}
 	
-	@RequestMapping("/deposited")
-	public String showDeposited() {
-		return "deposited";
+
+	@RequestMapping(value="/userposts/{username}", method=RequestMethod.GET)
+	public String findUser(@PathVariable String username, Model model) {
+	  User user = userService.findUser(username);  
+	  if(user == null){
+		  return "error"; 
+	  }
+	  model.addAttribute("user", user);  
+	  return "displaypost"; 
 	}
-	@RequestMapping("/withdrawn")
-	public String showWithDrawn() {
-		return "withdrawn";
-	}	
+	
+	@RequestMapping("/displaypost")
+	public String showposts(Model model)	{	
+	return "displaypost";
+}
+	
 	
 	@RequestMapping("/allposts")
 
 		public String showAllposts(Model model, Principal principal)	{				
 			List<Post> posts = postService.allPosts(principal.getName());
 			model.addAttribute("posts", posts);	
-
 			boolean hasPost = false;
 			if(principal !=null){
 				hasPost = postService.hasPost(principal.getName());

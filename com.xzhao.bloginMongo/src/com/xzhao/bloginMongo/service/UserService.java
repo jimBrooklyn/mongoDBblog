@@ -22,6 +22,12 @@ public class UserService {
 		// TODO Auto-generated method stub
 		return userDao.allUsers();
 	}
+	
+	public User findUser(String username) {
+		// TODO Auto-generated method stub
+		return userDao.findUser(username);
+	}
+
 
 	public boolean exists(String username) {
 		// TODO Auto-generated method stub

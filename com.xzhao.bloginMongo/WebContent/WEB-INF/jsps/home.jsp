@@ -29,6 +29,10 @@
 		<p>
 			<a href="<c:url value="/createpost"/>"> Create a new post</a>
 		</p>
+		
+		<p>
+			<a href="<c:url value="/myblog"/>">go to my blog</a>
+		</p>
 	</sec:authorize>
 	
 	<sec:authorize access="!isAuthenticated()">

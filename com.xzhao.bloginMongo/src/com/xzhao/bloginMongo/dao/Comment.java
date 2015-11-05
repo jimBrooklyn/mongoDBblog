@@ -2,12 +2,20 @@ package com.xzhao.bloginMongo.dao;
 
 import java.util.Date;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
 
 @Component("comment")
 public class Comment {
+	@NotBlank
+	@Size(min=4)
 	private String message;	
 	//name of user sending message
+	
+	@NotBlank
+	@Size(min=4)
 	private String name;
 
 	private Date date;	
