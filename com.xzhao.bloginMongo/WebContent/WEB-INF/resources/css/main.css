@@ -17,6 +17,12 @@ h3, h4 {
 	 border: 2px solid black;
 }
 
+.commenttext{
+	width: 500px;
+	height: 100px;
+}
+
+
 p.error {
 	color: red;
 	font-style: italic;

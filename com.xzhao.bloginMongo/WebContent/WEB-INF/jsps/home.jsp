@@ -12,7 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>Hello from home</h3>
+	<h3 style="text-align:center">Hello from the home of all Bloggers</h3>
 
 	<sec:authorize access="!isAuthenticated()">
 		<p>
@@ -41,24 +41,16 @@
 		</p>
 	</sec:authorize>
 
-
+All registered users:
 	<table id="formtable">
 		<tr>
 			<th>Username</th>
-			<th>FirstName</th>
-			<th>LastName</th>
-			<th>email</th>
 		</tr>
-
 		<c:forEach var="user" items="${users}">
 			<tr>
 				<td>${user.username}</td>
-				<td>${user.firstname}</td>
-				<td>${user.lastname}</td>
-				<td>${user.email}</td>
 			</tr>
 		</c:forEach>
-
 	</table>
 
 </body>

@@ -79,7 +79,7 @@
 				</tr>
 				<tr>
 					<td>Your comment:</td>
-					<td><sf:textarea path="message" name="message" type="text" />
+					<td><sf:textarea class="commenttext" path="message" name="message" type="text" />
 						<br /> <sf:errors path="message" cssClass="error" />
 				</tr>
 				<tr>
