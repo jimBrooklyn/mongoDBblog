@@ -29,12 +29,12 @@
 		<p>
 			<a href="<c:url value="/createpost"/>"> Create a new post</a>
 		</p>
-		
+
 		<p>
 			<a href="<c:url value="/myblog"/>">go to my blog</a>
 		</p>
 	</sec:authorize>
-	
+
 	<sec:authorize access="!isAuthenticated()">
 		<p>
 			<a href="<c:url value="/newuser"/>">Create a new Blog user </a>
@@ -44,6 +44,7 @@
 
 	<table id="formtable">
 		<tr>
+			<th>Username</th>
 			<th>FirstName</th>
 			<th>LastName</th>
 			<th>email</th>
@@ -51,6 +52,7 @@
 
 		<c:forEach var="user" items="${users}">
 			<tr>
+				<td>${user.username}</td>
 				<td>${user.firstname}</td>
 				<td>${user.lastname}</td>
 				<td>${user.email}</td>
