@@ -54,11 +54,11 @@ public class PostsController {
 	@RequestMapping("/myblog")
 	public String showBlog(Model model, Principal principal) {
 		String username = principal.getName();
-		String path = "redirect:" + "/userposts/" + username;
+		String path = "redirect:" + "/user/" + username;
 		return path;
 	}
 
-	@RequestMapping(value = "/userposts/{username}", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/{username}", method = RequestMethod.GET)
 	public String findUser(@PathVariable String username, Model model) {
 		User user = userService.findUser(username);
 		if (user == null) {

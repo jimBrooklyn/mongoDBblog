@@ -40,7 +40,8 @@
 			<a href="<c:url value="/newuser"/>">Create a new Blog user </a>
 		</p>
 	</sec:authorize>
-
+	<br><br><br>
+<hr>
 All registered users:
 	<table id="formtable">
 		<tr>
