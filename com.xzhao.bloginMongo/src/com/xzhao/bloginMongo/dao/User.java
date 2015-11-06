@@ -3,8 +3,10 @@ package com.xzhao.bloginMongo.dao;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Component;
 
 @Document(collection = "users")
+@Component
 public class User {
 	@Id
 	private ObjectId id;
